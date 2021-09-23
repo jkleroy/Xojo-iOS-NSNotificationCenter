@@ -16,9 +16,6 @@ Protected Module NSNotificationCenter_Helper
 		  Return res
 		  
 		  
-		  Break
-		  
-		  
 		End Function
 	#tag EndMethod
 
@@ -42,10 +39,23 @@ Protected Module NSNotificationCenter_Helper
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
+		Protected Function UIEdgeInsetMake(top As CGFloat, left As CGFloat, bottom As CGFloat, right As CGFloat) As xcUIEdgeInsets
+		  
+		  Dim insets As xcUIEdgeInsets
+		  insets.Top = top
+		  insets.Left = Left
+		  insets.Bottom = bottom
+		  insets.Right = Right
+		  
+		  Return insets
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Sub UnregisterKeyboardWillHideNotification(observer As ptr = nil)
 		  
 		  
-		  
+		  declare sub release lib "UIKit" selector "release" (obj_id as ptr)
 		  declare sub removeObserverForName lib "Foundation"  selector "removeObserver:name:object:" _
 		  (id as ptr, NotificationName as CFStringRef, Obj as Ptr)
 		  
@@ -53,7 +63,9 @@ Protected Module NSNotificationCenter_Helper
 		  
 		  removeObserverForName(NotificationCenterRef, "UIKeyboardWillHideNotification", observer)
 		  
-		  
+		  if observer <> nil then
+		    release(observer)
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -61,7 +73,7 @@ Protected Module NSNotificationCenter_Helper
 		Protected Sub UnregisterKeyboardWillShowNotification(observer As ptr = nil)
 		  
 		  
-		  
+		  declare sub release lib "UIKit" selector "release" (obj_id as ptr)
 		  declare sub removeObserverForName lib "Foundation"  selector "removeObserver:name:object:" _
 		  (id as ptr, NotificationName as CFStringRef, Obj as Ptr)
 		  
@@ -70,7 +82,9 @@ Protected Module NSNotificationCenter_Helper
 		  removeObserverForName(NotificationCenterRef, "UIKeyboardWillShowNotification", observer)
 		  
 		  
-		  
+		  if observer <> nil then
+		    release(observer)
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -109,6 +123,13 @@ Protected Module NSNotificationCenter_Helper
 	#tag Structure, Name = xcCGSize, Flags = &h1
 		width As CGFloat
 		height As CGFloat
+	#tag EndStructure
+
+	#tag Structure, Name = xcUIEdgeInsets, Flags = &h1
+		Top as CGFloat
+		  Left As CGFloat
+		  Bottom As CGFloat
+		Right As CGFloat
 	#tag EndStructure
 
 

@@ -1,5 +1,5 @@
 #tag MobileScreen
-Begin MobileScreen Screen1
+Begin MobileScreen ScreenTextArea
    BackButtonCaption=   ""
    Compatibility   =   ""
    ControlCount    =   0
@@ -11,75 +11,20 @@ Begin MobileScreen Screen1
    TintColor       =   "&h00000000"
    Title           =   "Keyboard height"
    Top             =   0
-   Begin MobileTextField TextField1
-      AccessibilityHint=   ""
-      AccessibilityLabel=   ""
-      Alignment       =   0
-      AllowAutoCorrection=   False
-      AllowSpellChecking=   False
-      AutoCapitalizationType=   0
-      AutoLayout      =   TextField1, 1, <Parent>, 1, False, +1.00, 4, 1, *kStdGapCtlToViewH, , True
-      AutoLayout      =   TextField1, 2, <Parent>, 2, False, +1.00, 4, 1, -*kStdGapCtlToViewH, , True
-      AutoLayout      =   TextField1, 3, TopLayoutGuide, 4, False, +1.00, 4, 1, *kStdControlGapV, , True
-      AutoLayout      =   TextField1, 8, , 0, True, +1.00, 4, 1, 31, , True
-      BorderStyle     =   3
-      ControlCount    =   0
-      Enabled         =   True
-      Height          =   31
-      Hint            =   "Type here"
-      InputType       =   0
-      Left            =   20
-      LockedInPosition=   False
-      Password        =   False
-      ReadOnly        =   False
-      ReturnCaption   =   0
-      Scope           =   2
-      Text            =   ""
-      TextColor       =   &c000000
-      TextFont        =   ""
-      TextSize        =   0
-      TintColor       =   ""
-      Top             =   73
-      Visible         =   True
-      Width           =   280
-   End
-   Begin MobileLabel Label1
-      AccessibilityHint=   ""
-      AccessibilityLabel=   ""
-      Alignment       =   0
-      AutoLayout      =   Label1, 1, TextField1, 1, False, +1.00, 4, 1, 0, , True
-      AutoLayout      =   Label1, 2, TextField1, 2, False, +1.00, 4, 1, 0, , True
-      AutoLayout      =   Label1, 3, TextField1, 4, False, +1.00, 4, 1, 30, , True
-      AutoLayout      =   Label1, 8, , 0, False, +1.00, 4, 1, 93, , True
-      ControlCount    =   0
-      Enabled         =   True
-      Height          =   93
-      Left            =   20
-      LineBreakMode   =   0
-      LockedInPosition=   False
-      Scope           =   2
-      Text            =   "Tap the Textfield to show the keyboard. If the keyboard doesn't show in the simulator, hit cmd+K or Simulator menu > I/O > Keyboard > Toggle"
-      TextColor       =   &c000000
-      TextFont        =   ""
-      TextSize        =   0
-      TintColor       =   ""
-      Top             =   134
-      Visible         =   True
-      Width           =   280
-   End
    Begin MobileButton Button1
       AccessibilityHint=   ""
       AccessibilityLabel=   ""
-      AutoLayout      =   Button1, 4, <Parent>, 4, False, +1.00, 4, 1, 0, button_bottom, True
-      AutoLayout      =   Button1, 9, <Parent>, 9, False, +1.00, 4, 1, 0, , True
+      AutoLayout      =   Button1, 4, BottomLayoutGuide, 3, False, +1.00, 4, 1, 0, button_bottom_hidden, True
+      AutoLayout      =   Button1, 4, <Parent>, 4, False, +1.00, 4, 1, 0, button_bottom_visible, False
       AutoLayout      =   Button1, 8, , 0, False, +1.00, 4, 1, 30, , True
+      AutoLayout      =   Button1, 2, TextArea1, 2, False, +1.00, 4, 1, 0, , True
       AutoLayout      =   Button1, 7, , 0, False, +1.00, 4, 1, 120, , True
       Caption         =   "Hide Keyboard"
       CaptionColor    =   &c007AFF00
       ControlCount    =   0
       Enabled         =   True
       Height          =   30
-      Left            =   100
+      Left            =   180
       LockedInPosition=   False
       Scope           =   2
       TextFont        =   ""
@@ -89,29 +34,50 @@ Begin MobileScreen Screen1
       Visible         =   False
       Width           =   120
    End
-   Begin MobileLabel Label2
+   Begin MobileTextArea TextArea1
       AccessibilityHint=   ""
       AccessibilityLabel=   ""
       Alignment       =   0
-      AutoLayout      =   Label2, 8, , 0, False, +1.00, 4, 1, 50, , True
-      AutoLayout      =   Label2, 1, Label1, 1, False, +1.00, 4, 1, 0, , True
-      AutoLayout      =   Label2, 3, Label1, 4, False, +1.00, 4, 1, *kStdControlGapV, , True
-      AutoLayout      =   Label2, 7, , 0, False, +1.00, 4, 1, 280, , True
+      AllowAutoCorrection=   False
+      AllowSpellChecking=   False
+      AutoCapitalizationType=   0
+      AutoLayout      =   TextArea1, 4, BottomLayoutGuide, 3, False, +1.00, 4, 1, -200, textarea_bottom, False
+      AutoLayout      =   TextArea1, 8, , 0, False, +1.00, 4, 1, 250, textarea_height, True
+      AutoLayout      =   TextArea1, 1, , 0, False, +1.00, 4, 1, 20, , True
+      AutoLayout      =   TextArea1, 2, <Parent>, 2, False, +1.00, 4, 1, -*kStdGapCtlToViewH, , True
+      AutoLayout      =   TextArea1, 3, TopLayoutGuide, 4, False, +1.00, 4, 1, *kStdControlGapV, , True
+      BorderStyle     =   2
       ControlCount    =   0
       Enabled         =   True
-      Height          =   50
+      Height          =   250
       Left            =   20
-      LineBreakMode   =   0
       LockedInPosition=   False
+      ReadOnly        =   False
       Scope           =   2
-      Text            =   "Change the keyboard to Emoji layout to see the updated keyboard size."
+      Text            =   "Untitled"
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
       TintColor       =   ""
-      Top             =   235
-      Visible         =   False
+      Top             =   73
+      Visible         =   True
       Width           =   280
+   End
+   Begin Timer Timer1
+      Height          =   32
+      Height          =   32
+      Left            =   100
+      Left            =   100
+      LockedInPosition=   False
+      PanelIndex      =   -1
+      Parent          =   ""
+      Period          =   1000
+      RunMode         =   2
+      Scope           =   2
+      Top             =   100
+      Top             =   100
+      Width           =   32
+      Width           =   32
    End
 End
 #tag EndMobileScreen
@@ -133,8 +99,8 @@ End
 		Sub Deactivated()
 		  
 		  //unregister for keyboard notifications 
-		  NSNotificationCenter_Helper.UnRegisterKeyboardWillShowNotifications(observerShow)
-		  NSNotificationCenter_Helper.UnRegisterKeyboardWillHideNotifications(observerHide)
+		  NSNotificationCenter_Helper.UnregisterKeyboardWillShowNotification(observerShow)
+		  NSNotificationCenter_Helper.UnregisterKeyboardWillHideNotification(observerHide)
 		End Sub
 	#tag EndEvent
 
@@ -142,11 +108,8 @@ End
 	#tag Method, Flags = &h21
 		Private Sub KeyboardNotificationBlock(NotificationPtr as Ptr)
 		  
-		  
-		  
-		  
 		  Declare function getname lib "Foundation"  selector "name" (id as ptr) as CFStringRef
-		  'Declare sub setContentInset lib "UIKit" selector "setContentInset:" (obj as ptr, value as NSNotificationCenter_Helper.xcUIEdgeInsets)
+		  Declare sub setContentInset lib "UIKit" selector "setContentInset:" (obj as ptr, value as NSNotificationCenter_Helper.xcUIEdgeInsets)
 		  
 		  Dim name As Text = getname(NotificationPtr)
 		  
@@ -155,27 +118,31 @@ End
 		    
 		  Case "UIKeyboardWillHideNotification"
 		    
-		    Label1.Text = "Keyboard will hide"
-		    Label2.Visible = False
+		    
 		    
 		    Button1.Visible = False
 		    
+		    self.Constraint("button_bottom_visible").Active = False
+		    self.Constraint("button_bottom_hidden").Active = True
 		    
+		    self.Constraint("textarea_height").Active = True
+		    self.Constraint("textarea_bottom").Active = False
+		    
+		    self.Constraint("textarea_bottom").Offset = -20
 		    
 		    
 		  Case "UIKeyboardWillShowNotification"
 		    
 		    
-		    Label1.Text = "Keyboard will show"
-		    Label2.Visible = True
+		    
 		    
 		    Declare function userInfo_ lib "Foundation" selector "userInfo" (id as ptr) as ptr
 		    
 		    if userInfo_(NotificationPtr) <> nil then
 		      Dim userInfoRef As Ptr = userInfo_(NotificationPtr)
 		      
-		      Dim keyName1 As String = "UIKeyboardFrameBeginUserInfoKey"
-		      Dim keyName2 As String = "UIKeyboardFrameEndUserInfoKey"
+		      
+		      Dim keyName As String = "UIKeyboardFrameEndUserInfoKey"
 		      
 		      declare function objectForKey lib "Foundation" selector "objectForKey:" (id as Ptr, key as CFStringRef) as Ptr
 		      declare function CGRectValue lib "Foundation" selector "CGRectValue" (obj as ptr) as NSNotificationCenter_Helper.xcCGRect
@@ -183,24 +150,29 @@ End
 		      Dim FrameEndRect As NSNotificationCenter_Helper.xcCGRect
 		      
 		      
-		      if objectForKey(userInfoRef, keyName2) <> nil then
-		        
-		        FrameEndRect = CGRectValue(objectForKey(userInfoRef, keyName2))
-		        
-		        
-		      end if
+		      // if keyboard size is not available for some reason, dont do anything
+		      if objectForKey(userInfoRef, keyName) = nil then Return
 		      
+		      FrameEndRect = CGRectValue(objectForKey(userInfoRef, keyName))
 		      
 		      
 		      Dim keyboardHeight As Double = FrameEndRect.rsize.height '+ RaiseEvent DeltaScroll
 		      
-		      Label1.Text = Label1.Text + &u0A +_
-		      "Keyboard height: " + &u0A +_
-		      keyboardHeight.ToString(locale.raw, "0.0")
+		      
 		      
 		      //This is an example to show how to move a control above the keyboard
 		      Button1.Visible = True
-		      self.Constraint("button_bottom").Offset = -keyboardHeight - 12
+		      
+		      self.Constraint("button_bottom_visible").Offset = -keyboardHeight - 12
+		      
+		      self.Constraint("textarea_height").Active = False
+		      self.Constraint("textarea_bottom").Active = TRUE
+		      self.Constraint("textarea_bottom").Offset = -keyboardHeight - 30 - 12
+		      
+		      self.Constraint("button_bottom_visible").Active = True
+		      self.Constraint("button_bottom_hidden").Active = False
+		      
+		      
 		      
 		      
 		      
@@ -239,7 +211,62 @@ End
 #tag Events Button1
 	#tag Event
 		Sub Pressed()
-		  TextField1.ClearFocus
+		  TextArea1.ClearFocus
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Timer1
+	#tag Event
+		Sub Run()
+		  '
+		  '
+		  '
+		  'Declare Function getframe_ Lib "UIKit.framework" selector "frame" (obj_id As Ptr) As NSNotificationCenter_Helper.xcCGRect
+		  '
+		  'Dim aView As Ptr = self.Handle
+		  '
+		  '
+		  'declare function superview lib "UIKit" selector "superview" (obj as ptr) as ptr
+		  '
+		  'Static logOnce As Boolean
+		  '
+		  'if logOnce = False then
+		  'System.DebugLog aView.UInt64.ToHex
+		  'end if
+		  '
+		  'Dim level As Integer
+		  '
+		  'While superview(aView) <> nil
+		  '
+		  'aView = superview(aView)
+		  '
+		  'Dim frame As NSNotificationCenter_Helper.xcCGRect = getframe_(aView)
+		  '
+		  'if frame.origin.y < 0.0 then
+		  '
+		  'Dim forceRect As nsnotificationCenter_Helper.xccgrect
+		  'forceRect.rsize = frame.rsize
+		  '
+		  'Dim pt0 As nsnotificationCenter_Helper.xccgPoint
+		  'pt0.x = 0
+		  'pt0.y = 0
+		  '
+		  'forceRect.origin = pt0
+		  '
+		  'Declare Sub setFrame_ Lib "UIKit" selector "setFrame:" (obj_id As ptr, frame As NSNotificationCenter_Helper.xcCGRect)
+		  'setFrame_(aView, forceRect)
+		  'end if
+		  '
+		  '
+		  'Wend
+		  '
+		  'logOnce = True
+		  '
+		  'Dim re As NSNotificationCenter_Helper.xcCGRect = getframe_(aView)
+		  '
+		  'Dim rect as New xojo.Core.Rect(re.origin.x, re.origin.y, re.rsize.width, re.rsize.height)
+		  '
+		  'Label1.Text = rect.left.ToString +":" + rect.top.ToString + "  " + rect.Width.ToString + ":" + rect.Height.ToString
 		End Sub
 	#tag EndEvent
 #tag EndEvents
