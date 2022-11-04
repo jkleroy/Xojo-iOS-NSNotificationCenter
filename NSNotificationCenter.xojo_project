@@ -1,5 +1,5 @@
 Type=iOS
-RBProjectVersion=2021.011
+RBProjectVersion=2022.031
 MinIDEVersion=20140300
 OrigIDEVersion=20210101
 Class=App;App.xojo_code;&h0000000029E897FF;&h0000000000000000;false
@@ -49,7 +49,7 @@ iOSName=Keyboard height
 iOSProvisioningProfile=0
 GenerateGlobalUsingClauses=False
 EnvironmentVariables=
-Capabilities={"AppGroups":{"Enabled":false,"Groups":{}},"ApplePay":{"Enabled":false,"Merchants":{}},"AssociatedDomains":{"Enabled":false,"Domains":{}},"BackgroundModes":{"Enabled":false,"Modes":{}},"iCloud":{"Enabled":false,"Containers":{}},"KeyChainSharing":{"Enabled":false,"Groups":{}},"Maps":{"Enabled":false,"MapDirections":{}},"Passbook":{"Enabled":false,"Passes":{}},"URLSchemes":{"Enabled":false,"urls":{}},"ShortcutItems":{"Enabled":false,"shortcuts":{}},"LocationStrings":{"Enabled":false,"locationstrings":{}},"PhotosAccess":{"Enabled":false,"photosdata":{}},"CameraAccess":{"Enabled":false,"cameradata":{}},"UserAuthenticationAccess":{"Enabled":false,"userauthorizationtext":{}}}
+Capabilities={"AppGroups":{"Enabled":false,"Groups":{}},"ApplePay":{"Enabled":false,"Merchants":{}},"AssociatedDomains":{"Enabled":false,"Domains":{}},"BackgroundModes":{"Enabled":false,"Modes":{}},"iCloud":{"Enabled":false,"Containers":{}},"KeyChainSharing":{"Enabled":false,"Groups":{}},"Maps":{"Enabled":false,"MapDirections":{}},"Passbook":{"Enabled":false,"Passes":{}},"URLSchemes":{"Enabled":false,"urls":{}},"ShortcutItems":{"Enabled":false,"shortcuts":[]},"LocationStrings":{"Enabled":false,"locationstrings":[]},"PhotosAccess":{"Enabled":false,"photosdata":[]},"CameraAccess":{"Enabled":false,"cameradata":[]},"UserAuthenticationAccess":{"Enabled":false,"userauthorizationtext":[]}}
 BuildForAppStore=False
 MacBuildArchitecture=1
 OptimizationLevel=0

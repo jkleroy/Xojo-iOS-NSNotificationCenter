@@ -3,12 +3,14 @@ Begin MobileScreen ScreenTextArea
    BackButtonCaption=   ""
    Compatibility   =   ""
    ControlCount    =   0
+   Device = 1
    HasNavigationBar=   True
    LargeTitleDisplayMode=   2
    Left            =   0
+   Orientation = 0
    TabBarVisible   =   True
    TabIcon         =   0
-   TintColor       =   "&h00000000"
+   TintColor       =   &c00000000
    Title           =   "Keyboard height"
    Top             =   0
    Begin MobileButton Button1
@@ -29,7 +31,7 @@ Begin MobileScreen ScreenTextArea
       Scope           =   2
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   538
       Visible         =   False
       Width           =   120
@@ -43,7 +45,7 @@ Begin MobileScreen ScreenTextArea
       AutoCapitalizationType=   0
       AutoLayout      =   TextArea1, 4, BottomLayoutGuide, 3, False, +1.00, 4, 1, -200, textarea_bottom, False
       AutoLayout      =   TextArea1, 8, , 0, False, +1.00, 4, 1, 250, textarea_height, True
-      AutoLayout      =   TextArea1, 1, , 0, False, +1.00, 4, 1, 20, , True
+      AutoLayout      =   TextArea1, 1, <Parent>, 1, False, +1.00, 4, 1, 20, , True
       AutoLayout      =   TextArea1, 2, <Parent>, 2, False, +1.00, 4, 1, -*kStdGapCtlToViewH, , True
       AutoLayout      =   TextArea1, 3, TopLayoutGuide, 4, False, +1.00, 4, 1, *kStdControlGapV, , True
       BorderStyle     =   2
@@ -58,26 +60,18 @@ Begin MobileScreen ScreenTextArea
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   73
       Visible         =   True
       Width           =   280
    End
    Begin Timer Timer1
-      Height          =   32
-      Height          =   32
-      Left            =   100
-      Left            =   100
       LockedInPosition=   False
       PanelIndex      =   -1
       Parent          =   ""
       Period          =   1000
       RunMode         =   2
       Scope           =   2
-      Top             =   100
-      Top             =   100
-      Width           =   32
-      Width           =   32
    End
 End
 #tag EndMobileScreen

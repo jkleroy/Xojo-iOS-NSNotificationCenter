@@ -55,17 +55,17 @@ Protected Module NSNotificationCenter_Helper
 		Protected Sub UnregisterKeyboardWillHideNotification(observer As ptr = nil)
 		  
 		  
-		  declare sub release lib "UIKit" selector "release" (obj_id as ptr)
+		  'declare sub release lib "UIKit" selector "release" (obj_id as ptr)
 		  declare sub removeObserverForName lib "Foundation"  selector "removeObserver:name:object:" _
-		  (id as ptr, NotificationName as CFStringRef, Obj as Ptr)
+		  (id as ptr, obs as ptr, NotificationName as CFStringRef, Obj as Ptr)
 		  
 		  
 		  
-		  removeObserverForName(NotificationCenterRef, "UIKeyboardWillHideNotification", observer)
+		  removeObserverForName(NotificationCenterRef, observer, "UIKeyboardWillHideNotification", nil)
 		  
-		  if observer <> nil then
-		    release(observer)
-		  end if
+		  'if observer <> nil then
+		  'release(observer)
+		  'end if
 		End Sub
 	#tag EndMethod
 
@@ -73,18 +73,18 @@ Protected Module NSNotificationCenter_Helper
 		Protected Sub UnregisterKeyboardWillShowNotification(observer As ptr = nil)
 		  
 		  
-		  declare sub release lib "UIKit" selector "release" (obj_id as ptr)
+		  'declare sub release lib "UIKit" selector "release" (obj_id as ptr)
 		  declare sub removeObserverForName lib "Foundation"  selector "removeObserver:name:object:" _
-		  (id as ptr, NotificationName as CFStringRef, Obj as Ptr)
+		  (id as ptr, obs as ptr, NotificationName as CFStringRef, Obj as Ptr)
 		  
 		  
 		  
-		  removeObserverForName(NotificationCenterRef, "UIKeyboardWillShowNotification", observer)
+		  removeObserverForName(NotificationCenterRef, observer, "UIKeyboardWillShowNotification", nil)
 		  
 		  
-		  if observer <> nil then
-		    release(observer)
-		  end if
+		  'if observer <> nil then
+		  'release(observer)
+		  'end if
 		End Sub
 	#tag EndMethod
 

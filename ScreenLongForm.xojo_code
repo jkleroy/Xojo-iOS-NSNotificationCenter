@@ -3,12 +3,14 @@ Begin MobileScreen ScreenLongForm
    BackButtonCaption=   ""
    Compatibility   =   ""
    ControlCount    =   0
+   Device = 1
    HasNavigationBar=   True
    LargeTitleDisplayMode=   2
    Left            =   0
+   Orientation = 0
    TabBarVisible   =   True
    TabIcon         =   0
-   TintColor       =   "&h00000000"
+   TintColor       =   &c00000000
    Title           =   "Keyboard height"
    Top             =   0
    Begin MobileTextField TextField1
@@ -38,7 +40,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   73
       Visible         =   True
       Width           =   280
@@ -60,7 +62,7 @@ Begin MobileScreen ScreenLongForm
       Scope           =   2
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   385
       Visible         =   True
       Width           =   120
@@ -92,7 +94,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   112
       Visible         =   True
       Width           =   280
@@ -124,7 +126,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   151
       Visible         =   True
       Width           =   280
@@ -156,7 +158,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   190
       Visible         =   True
       Width           =   280
@@ -188,7 +190,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   229
       Visible         =   True
       Width           =   280
@@ -220,7 +222,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   268
       Visible         =   True
       Width           =   280
@@ -252,7 +254,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   307
       Visible         =   True
       Width           =   280
@@ -284,7 +286,7 @@ Begin MobileScreen ScreenLongForm
       TextColor       =   &c000000
       TextFont        =   ""
       TextSize        =   0
-      TintColor       =   ""
+      TintColor       =   &c000000
       Top             =   346
       Visible         =   True
       Width           =   280
@@ -459,7 +461,28 @@ End
 #tag Events Button1
 	#tag Event
 		Sub Pressed()
-		  TextField1.ClearFocus
+		  dim activeTextField As MobileUIControl
+		  Dim foundControl as Boolean
+		  
+		  declare function isFirstResponder lib "Foundation" selector "isFirstResponder" (obj_id as Ptr) as boolean
+		  
+		  
+		  //Finding the active text field
+		  For i as integer = 0 to self.ControlCount-1
+		    
+		    Dim ctrl As MobileUIControl = self.ControlAt(i)
+		    
+		    if isFirstResponder(ctrl.Handle) then
+		      foundControl = True
+		      activeTextField = ctrl
+		      Exit for i
+		    end if
+		  Next
+		  
+		  //Textfield not found
+		  if foundControl = False then Return
+		  
+		  activeTextField.ClearFocus
 		End Sub
 	#tag EndEvent
 #tag EndEvents
